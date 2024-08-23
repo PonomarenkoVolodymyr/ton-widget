@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ton-blockchain-widget/static/css/main.abd98621.css",
+    "main.js": "/ton-blockchain-widget/static/js/main.36b8ba73.js",
+    "static/js/453.190b7285.chunk.js": "/ton-blockchain-widget/static/js/453.190b7285.chunk.js",
+    "static/media/ton.webp": "/ton-blockchain-widget/static/media/ton.a790c5a895c35fb0951f.webp",
+    "static/media/dogs.webp": "/ton-blockchain-widget/static/media/dogs.035d005ad890c049fd0d.webp",
+    "static/media/not.webp": "/ton-blockchain-widget/static/media/not.aea7fca11601d8c24d00.webp",
+    "index.html": "/ton-blockchain-widget/index.html",
+    "main.abd98621.css.map": "/ton-blockchain-widget/static/css/main.abd98621.css.map",
+    "main.36b8ba73.js.map": "/ton-blockchain-widget/static/js/main.36b8ba73.js.map",
+    "453.190b7285.chunk.js.map": "/ton-blockchain-widget/static/js/453.190b7285.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd98621.css",
+    "static/js/main.36b8ba73.js"
+  ]
+}
