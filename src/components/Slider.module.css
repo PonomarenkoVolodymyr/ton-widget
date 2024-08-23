@@ -1,0 +1,81 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.sliderSelector {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.slider-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+  display: none;
+  /* можно добавить другие стили, например, для размера элементов */
+}
+
+.slider-item.active {
+  display: block;
+}
+.pageName {
+  width: 80px;
+  color: #a4a3a3;
+}
+
+.arrowButton {
+  margin: 0 10px 0 25px;
+  width: 60px;
+  height: 25px;
+  background-color: rgb(30, 30, 30);
+  border-width: 1px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #a4a3a3;
+  position: relative;
+  overflow: hidden;
+}
+
+.arrowButton:active {
+  box-shadow: 0px 0px 10px rgba(210, 200, 200, 0.549);
+}
+
+.arrowColor {
+  color: #a4a3a3;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  display: inline-block; /* Чтобы трансформация работала правильно */
+}
+
+.arrowButton:hover .arrowColor {
+  transform: scale(1.2); /* Увеличивает элемент на 20% */
+}
+
+.comingSoon {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #a4a3a3;
+}
+
+.coinsLogo {
+  width: 45px;
+  height: 45px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 12px rgba(210, 200, 200, 0.705);
+}
+
+.coinsLogo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}

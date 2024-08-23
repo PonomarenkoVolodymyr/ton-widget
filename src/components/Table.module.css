@@ -1,0 +1,197 @@
+.gridContainer {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px; /* Расстояние между ячейками сетки */
+  width: 600px; /* Устанавливает ширину грид-контейнера */
+
+  margin: 0 auto; /* Центрует грид-контейнер по горизонтали */
+}
+
+.gridItem {
+  height: 40px;
+  /* background-color: rgb(73, 73, 73); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 17px;
+  color: #cdc9c9;
+}
+.gridItemExch {
+  height: 40px;
+  /* background-color: rgb(73, 73, 73); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 17px;
+  color: #cdc9c9;
+  position: relative;
+}
+.imageBox {
+  position: absolute;
+  left: 25px;
+}
+.nameExch {
+  left: 70px;
+  position: absolute;
+}
+
+.logos {
+  width: 30px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.gridItemRed {
+  height: 40px;
+  /* background-color: rgb(73, 73, 73); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 18px;
+  color: #e22f1f;
+}
+
+.gridItemGreen {
+  height: 40px;
+  /* background-color: rgb(73, 73, 73); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 18px;
+  color: #48cc57;
+}
+
+.greenArrow {
+  font-size: 15px;
+  color: #48cc57;
+}
+.redArrow {
+  font-size: 15px;
+  color: #e22f1f;
+}
+
+@media (max-width: 800px) {
+  .gridContainer {
+    gap: 2px; /* Расстояние между ячейками сетки */
+    width: 450px; /* Устанавливает ширину грид-контейнера */
+
+    margin: 0 auto; /* Центрует грид-контейнер по горизонтали */
+  }
+  .gridItem {
+    height: 30px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  .gridItemExch {
+    height: 30px;
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .gridItemRed {
+    height: 35px;
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .gridItemGreen {
+    height: 35px;
+    padding: 9px;
+    font-size: 15px;
+  }
+
+  .imageBox {
+    left: 25px;
+  }
+  .nameExch {
+    left: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .gridContainer {
+    gap: 1px; /* Расстояние между ячейками сетки */
+    width: 370px; /* Устанавливает ширину грид-контейнера */
+
+    margin: 0 auto; /* Центрует грид-контейнер по горизонтали */
+  }
+  .gridItem {
+    margin-bottom: 2px;
+    height: 30px;
+    padding: 3px;
+    font-size: 12px;
+  }
+  .gridItemExch {
+    height: 30px;
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .gridItemRed {
+    height: 30px;
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .gridItemGreen {
+    height: 30px;
+    padding: 3px;
+    font-size: 15px;
+  }
+
+  .imageBox {
+    left: 15px;
+  }
+  .nameExch {
+    left: 43px;
+  }
+  .logos {
+    width: 23px;
+    height: auto;
+    border-radius: 3px;
+  }
+}
+
+@media (max-width: 395px) {
+  .gridContainer {
+    gap: 1px;
+    width: 345px;
+
+    margin: 0 auto;
+  }
+}
+@media (max-width: 345px) {
+  .gridContainer {
+    gap: 1px;
+    width: 300px;
+
+    margin: 0 auto;
+  }
+  .gridItemExch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 3px;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .imageBox {
+    position: relative;
+    left: 0;
+  }
+
+  .nameExch {
+    position: relative;
+    left: 0;
+    top: -3px;
+    font-size: 9px;
+  }
+}

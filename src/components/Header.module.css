@@ -1,0 +1,21 @@
+.header {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  font-size: 23px;
+  color: #a4a3a3;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.h4 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  font-size: 17px;
+  color: #a4a3a3;
+  font-weight: 200;
+}

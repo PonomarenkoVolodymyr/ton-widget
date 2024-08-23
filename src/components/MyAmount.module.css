@@ -1,0 +1,40 @@
+.myAmount {
+  padding: 5px 12px;
+  margin-bottom: 15px;
+
+  width: 300px;
+  height: 30px;
+  border-radius: 12.5px;
+  font-size: 16px;
+  color: #a4a3a3;
+  background-color: rgb(30, 30, 30);
+  border: none;
+  box-shadow: 0px 0px 40px rgb(5, 5, 5);
+  text-align: center;
+}
+
+.myAmount:focus {
+  outline: none;
+  color: #a4a3a3;
+  box-shadow: 0px 0px 10px rgb(5, 5, 5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 500px) {
+  .myAmount {
+    margin-bottom: 10px;
+
+    width: 250px;
+    height: 28px;
+    border-radius: 12.5px;
+    font-size: 15px;
+  }
+}
