@@ -1,9 +1,14 @@
 import { useState } from 'react';
-import { VscArrowRight } from 'react-icons/vsc';
-import { VscArrowLeft } from 'react-icons/vsc';
+// import { VscArrowRight } from 'react-icons/vsc';
+// import { VscArrowLeft } from 'react-icons/vsc';
+// import { HiOutlineArrowLongRight } from 'react-icons/hi2';
+// import { HiOutlineArrowLongLeft } from 'react-icons/hi2';
+import { MoveRight } from 'lucide-react';
+import { MoveLeft } from 'lucide-react';
 
 import NotSlide from './Slides/NotSlide';
 import TonSlide from './Slides/TonSlide';
+import DogsSlide from './Slides/DogsSlide';
 
 import styles from './Slider.module.css';
 
@@ -28,7 +33,8 @@ const pages = [
     id: 2,
     name: 'DOGS',
     coinLogo: <img src={dogsLogo} alt="DOGS Logo" />,
-    component: 'Coming soon...',
+    // component: 'Coming soon...',
+    component: <DogsSlide />,
   },
 ];
 
@@ -52,14 +58,16 @@ const Slider = () => {
     <div className={styles.sliderContainer}>
       <div className={styles.sliderSelector}>
         <button onClick={handlePrev} className={styles.arrowButton}>
-          <VscArrowLeft className={styles.arrowColor} />
+          <MoveLeft color="#0f0463" size={45} strokeWidth={0.6} />
         </button>
-        <div className={styles.pageName}>
-          <h3 className={styles.testText}>{pages[currentSlide].name}</h3>
+        <div className={styles.center}>
+          <div className={styles.coinsLogo}>{pages[currentSlide].coinLogo}</div>
+          <div className={styles.pageName}>
+            <h3 className={styles.text}>{pages[currentSlide].name}</h3>
+          </div>
         </div>
-        <div className={styles.coinsLogo}>{pages[currentSlide].coinLogo}</div>
         <button onClick={handleNext} className={styles.arrowButton}>
-          <VscArrowRight className={styles.arrowColor} />
+          <MoveRight color="#0f0463" size={45} strokeWidth={0.6} />
         </button>
       </div>
       <div className={styles[swichStyle]}>{pages[currentSlide].component}</div>

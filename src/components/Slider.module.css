@@ -1,13 +1,18 @@
-.slider-container {
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 .sliderSelector {
+  width: 325px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .slider-grid {
@@ -24,31 +29,46 @@
 .slider-item.active {
   display: block;
 }
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .pageName {
   width: 80px;
-  color: #a4a3a3;
+}
+
+.text {
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 500;
+  color: #e4e5e6;
 }
 
 .arrowButton {
-  margin: 0 10px 0 25px;
-  width: 60px;
-  height: 25px;
-  background-color: rgb(30, 30, 30);
-  border-width: 1px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #a4a3a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0 10px 0 10px; */
+  width: 70px;
+  height: 30px;
+  background-color: #0157ff;
+  /* background-color: rgb(30, 30, 30); */
+  border-radius: 7px;
+  /* border: 1px solid #5165a4; */
+  border: none;
   position: relative;
   overflow: hidden;
 }
 
 .arrowButton:active {
-  box-shadow: 0px 0px 10px rgba(210, 200, 200, 0.549);
+  box-shadow: 0px 0px 12px #043fb5;
+  /* box-shadow: 0px 0px 10px rgba(210, 200, 200, 0.549); */
 }
 
 .arrowColor {
-  color: #a4a3a3;
-  font-size: 14px;
+  color: #0f0463;
+  font-size: 30px;
   transition: transform 0.3s ease;
   display: inline-block; /* Чтобы трансформация работала правильно */
 }
@@ -64,18 +84,47 @@
 }
 
 .coinsLogo {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   /* display: flex;
   align-items: center;
   justify-content: center; */
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0px 0px 12px rgba(210, 200, 200, 0.705);
+  /* box-shadow: 0px 0px 12px rgba(11, 36, 138, 0.705); */
 }
 
 .coinsLogo img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .sliderSelector {
+    width: 275px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .arrowButton {
+    width: 60px;
+  }
+  .center {
+    position: relative;
+  }
+  .coinsLogo {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: -2px;
+    top: -18px;
+  }
+
+  .text {
+    font-size: 17px;
+    position: absolute;
+    top: -27px;
+    left: 45px;
+  }
 }

@@ -1,24 +1,27 @@
 .myAmount {
-  padding: 5px 12px;
-  margin-bottom: 15px;
-
   width: 300px;
   height: 30px;
-  border-radius: 12.5px;
-  font-size: 16px;
-  color: #a4a3a3;
-  background-color: rgb(30, 30, 30);
+  border-radius: 8px;
+  padding: 5px 12px;
+  margin-bottom: 15px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-size: 18px !important;
+  font-weight: 400;
+  color: #d1d1d1;
+  background-color: transparent;
+  /* background-color: rgb(30, 30, 30); */
 
-  border: 1px solid #6c6a6a;
-  box-shadow: 0px 0px 0px #a4a3a3;
+  border: 1px solid #5165a4;
+  /* border: 1px solid #6c6a6a; */
+  box-shadow: 0px 0px 0px#5165a4;
   text-align: center;
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .myAmount:focus {
   outline: none;
-  color: #a4a3a3;
-  box-shadow: 0px 0px 10px #a4a3a3;
+  /* color: #a4a3a3; */
+  box-shadow: 0px 0px 12px #043fb5;
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -27,6 +30,7 @@ input:focus::placeholder {
 }
 
 input::placeholder {
+  font-size: 17px;
   transition: color 0.2s ease;
 }
 
@@ -48,8 +52,23 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 400;
   font-size: 17px;
   color: #cdc9c9;
+}
+.gridItemTitles {
+  height: 40px;
+  /* background-color: rgb(73, 73, 73); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #969393;
+  /* color: #cdc9c9; */
 }
 .gridItemExch {
   height: 40px;
@@ -58,13 +77,16 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 400;
   font-size: 17px;
   color: #cdc9c9;
   position: relative;
 }
 .imageBox {
-  position: absolute;
-  left: 25px;
+  position: relative;
+
+  /* left: 25px; */
 }
 .nameExch {
   left: 70px;
@@ -72,9 +94,20 @@ input::placeholder {
 }
 
 .logos {
-  width: 30px;
+  width: 90px;
   height: auto;
-  border-radius: 6px;
+
+  position: absolute;
+  left: -45px;
+  bottom: -8px;
+}
+.logos2 {
+  width: 80px;
+  height: auto;
+}
+.logos3 {
+  width: 70px;
+  height: auto;
 }
 
 .gridItemRed {
@@ -84,7 +117,9 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  font-size: 18px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
   color: #e22f1f;
 }
 
@@ -95,7 +130,9 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  font-size: 18px;
+  font-family: 'Avenir Next Cyr', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
   color: #48cc57;
 }
 
@@ -138,9 +175,9 @@ input::placeholder {
     font-size: 15px;
   }
 
-  .imageBox {
+  /* .imageBox {
     left: 25px;
-  }
+  } */
   .nameExch {
     left: 60px;
   }
@@ -149,10 +186,15 @@ input::placeholder {
   .gridContainer {
     gap: 1px; /* Расстояние между ячейками сетки */
     width: 370px; /* Устанавливает ширину грид-контейнера */
-
     margin: 0 auto; /* Центрует грид-контейнер по горизонтали */
   }
   .gridItem {
+    margin-bottom: 2px;
+    height: 30px;
+    padding: 3px;
+    font-size: 12px;
+  }
+  .gridItemTitles {
     margin-bottom: 2px;
     height: 30px;
     padding: 3px;
@@ -167,25 +209,36 @@ input::placeholder {
   .gridItemRed {
     height: 30px;
     padding: 3px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .gridItemGreen {
     height: 30px;
     padding: 3px;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .imageBox {
-    left: 15px;
+    width: 70px;
   }
   .nameExch {
     left: 43px;
   }
   .logos {
-    width: 23px;
+    width: 63px;
     height: auto;
-    border-radius: 3px;
+
+    position: absolute;
+    left: 5px;
+    bottom: -5px;
+  }
+  .logos2 {
+    width: 50px;
+    height: auto;
+  }
+  .logos3 {
+    width: 50px;
+    height: auto;
   }
   .myAmount {
     margin-bottom: 10px;
@@ -193,7 +246,7 @@ input::placeholder {
     width: 250px;
     height: 28px;
     border-radius: 12.5px;
-    font-size: 15px;
+    font-size: 15px !important;
   }
 }
 
@@ -224,10 +277,11 @@ input::placeholder {
   }
 
   .imageBox {
-    position: relative;
-    left: 0;
+    width: 50px;
   }
-
+  .logos {
+    width: 50px;
+  }
   .nameExch {
     position: relative;
     left: 0;

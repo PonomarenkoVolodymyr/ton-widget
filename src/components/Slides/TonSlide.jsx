@@ -1,8 +1,8 @@
 import { useEffect, React, useState } from 'react';
 import styles from './Slides.module.css';
-import BinanceLogo from '../../logos/binanceLogo.png';
-import ByBitLogo from '../../logos/ByBitLogo.png';
-import OKXLogo from '../../logos/OKXLogo.png';
+import BinanceLogo from '../../logos/2full-binance-logo.png';
+import ByBitLogo from '../../logos/2bybit-logo-white.png';
+import OKXLogo from '../../logos/2full-okx-log-white.png';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setTonCoinsValue } from '../../redux/tonPricesSlice';
@@ -164,10 +164,10 @@ const NotSlide = () => {
         ></input>
       </div>
       <div className={styles.gridContainer}>
-        <div className={styles.gridItem}>Exchange</div>
-        <div className={styles.gridItem}>Price (USDT)</div>
-        <div className={styles.gridItem}>24h </div>
-        <div className={styles.gridItem}>If sell (USDT)</div>
+        <div className={styles.gridItemTitles}>Exchange</div>
+        <div className={styles.gridItemTitles}>Price (USDT)</div>
+        <div className={styles.gridItemTitles}>24h </div>
+        <div className={styles.gridItemTitles}>If sell (USDT)</div>
         <div className={styles.gridItemExch}>
           <div className={styles.imageBox}>
             <img
@@ -176,7 +176,6 @@ const NotSlide = () => {
               alt="Binance Logo"
             />
           </div>
-          <div className={styles.nameExch}>Binance</div>
         </div>
         <div className={styles.gridItem}>
           {tonBinanceLastPrice}&nbsp;&nbsp;{arrowBinance}
@@ -185,9 +184,8 @@ const NotSlide = () => {
         <div className={styles.gridItem}>{bnanceEarn}</div>
         <div className={styles.gridItemExch}>
           <div className={styles.imageBox}>
-            <img className={styles.logos} src={ByBitLogo} alt="ByBit Logo" />
+            <img className={styles.logos2} src={ByBitLogo} alt="ByBit Logo" />
           </div>
-          <div className={styles.nameExch}>ByBit</div>
         </div>
         <div className={styles.gridItem}>
           {tonBybitLastPrice}&nbsp;&nbsp;{arrowByBit}
@@ -196,9 +194,8 @@ const NotSlide = () => {
         <div className={styles.gridItem}>{bybitEarn}</div>
         <div className={styles.gridItemExch}>
           <div className={styles.imageBox}>
-            <img className={styles.logos} src={OKXLogo} alt="OKX Logo" />
+            <img className={styles.logos3} src={OKXLogo} alt="OKX Logo" />
           </div>
-          <div className={styles.nameExch}>OKX</div>
         </div>
         <div className={styles.gridItem}>
           {tonOkxLastPrice}&nbsp;&nbsp;{arrowOKX}

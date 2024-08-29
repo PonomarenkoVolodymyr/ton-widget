@@ -5,74 +5,76 @@ import ByBitLogo from '../../logos/2bybit-logo-white.png';
 import OKXLogo from '../../logos/2full-okx-log-white.png';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setCoinsValue } from '../../redux/pricesSlice';
+import { setDogsCoinsValue } from '../../redux/dogsPricesSlice';
 
-import useBinanceWebSocket from '../../utils/notWebSocket/websocketBinance';
-import useByBitWebSocket from '../../utils/notWebSocket/websocketByBit';
-import useOKXWebSocket from '../../utils/notWebSocket/websocketOKX';
+import useDogsBinanceWebSocket from '../../utils/dogsWebSoket/dogsBinanceWS';
+import useDogsBybitWebSocket from '../../utils/dogsWebSoket/dogsBybitWS';
+import useDogsOKXWebSocket from '../../utils/dogsWebSoket/dogsOkxWS';
 
 import { BsArrowDownRightSquareFill } from 'react-icons/bs';
 import { BsArrowUpRightSquareFill } from 'react-icons/bs';
 
-const NotSlide = () => {
+const DogsSlide = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const cachedValue = localStorage.getItem('coinsValue');
+    const cachedValue = localStorage.getItem('DogsCoinsValue');
     if (cachedValue) {
-      dispatch(setCoinsValue(parseFloat(cachedValue)));
+      dispatch(setDogsCoinsValue(parseFloat(cachedValue)));
     }
   }, [dispatch]);
 
-  const recordCoinsValue = (e) => {
+  const recordDogsCoinsValue = (e) => {
     const { value } = e.target;
     const filteredValue = parseFloat(value.replace(/[^0-9.]/g, ''));
 
-    dispatch(setCoinsValue(filteredValue));
+    dispatch(setDogsCoinsValue(filteredValue));
 
-    localStorage.setItem('coinsValue', filteredValue || '');
+    localStorage.setItem('DogsCoinsValue', filteredValue || '');
   };
 
-  useBinanceWebSocket();
-  useByBitWebSocket();
-  useOKXWebSocket();
+  useDogsBinanceWebSocket();
+  useDogsBybitWebSocket();
+  useDogsOKXWebSocket();
 
   const {
-    binanceLastPrice,
-    binanceChange24h,
-    bybitLastPrice,
-    bybitChange24h,
-    okxLastPrice,
-    okxOpen24h,
-    coinsValue,
-  } = useSelector((state) => state.prices);
+    dogsBinanceLastPrice,
+    dogsBinanceChange24h,
+    dogsBybitLastPrice,
+    dogsBybitChange24h,
+    dogsOkxLastPrice,
+    dogsOkxOpen24h,
+    dogsCoinsValue,
+  } = useSelector((state) => state.dogsPrices);
 
-  const okxChange24h =
-    okxLastPrice && okxOpen24h
-      ? (((okxLastPrice - okxOpen24h) / okxOpen24h) * 100).toFixed(3)
+  const dogsOkxChange24h =
+    dogsOkxLastPrice && dogsOkxOpen24h
+      ? (((dogsOkxLastPrice - dogsOkxOpen24h) / dogsOkxOpen24h) * 100).toFixed(
+          3
+        )
       : '';
 
   // Change color 24h column:
   const binance24hchanger =
-    binanceChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
+    dogsBinanceChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
   const bybit24hchanger =
-    bybitChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
+    dogsBybitChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
   const okx24hchanger =
-    okxChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
+    dogsOkxChange24h > 0 ? styles.gridItemGreen : styles.gridItemRed;
   // Change color 24h column end.
   // Calculating earn:
   const bnanceEarn =
-    coinsValue && bybitLastPrice
-      ? (coinsValue * bybitLastPrice).toFixed(2)
+    dogsCoinsValue && dogsBybitLastPrice
+      ? (dogsCoinsValue * dogsBybitLastPrice).toFixed(2)
       : 'Nothing';
   const bybitEarn =
-    coinsValue && bybitLastPrice
-      ? (coinsValue * bybitLastPrice).toFixed(2)
+    dogsCoinsValue && dogsBybitLastPrice
+      ? (dogsCoinsValue * dogsBybitLastPrice).toFixed(2)
       : 'Nothing';
 
   const okxEarn =
-    coinsValue && okxLastPrice
-      ? (coinsValue * okxLastPrice).toFixed(2)
+    dogsCoinsValue && dogsOkxLastPrice
+      ? (dogsCoinsValue * dogsOkxLastPrice).toFixed(2)
       : 'Nothing';
 
   // Calculating earn end
@@ -82,14 +84,14 @@ const NotSlide = () => {
   const [priceDirectionBinance, setPriceDirectionBinance] = useState(null);
   useEffect(() => {
     if (prevRateBinance !== null) {
-      if (binanceLastPrice > prevRateBinance) {
+      if (dogsBinanceLastPrice > prevRateBinance) {
         setPriceDirectionBinance('up');
-      } else if (binanceLastPrice < prevRateBinance) {
+      } else if (dogsBinanceLastPrice < prevRateBinance) {
         setPriceDirectionBinance('down');
       }
     }
-    setPrevRateBinance(binanceLastPrice);
-  }, [binanceLastPrice]);
+    setPrevRateBinance(dogsBinanceLastPrice);
+  }, [dogsBinanceLastPrice]);
 
   const arrowBinance =
     priceDirectionBinance === 'up' ? (
@@ -103,14 +105,14 @@ const NotSlide = () => {
   const [priceDirectionByBit, setPriceDirectionByBit] = useState(null);
   useEffect(() => {
     if (prevRateByBit !== null) {
-      if (bybitLastPrice > prevRateByBit) {
+      if (dogsBybitLastPrice > prevRateByBit) {
         setPriceDirectionByBit('up');
-      } else if (bybitLastPrice < prevRateByBit) {
+      } else if (dogsBybitLastPrice < prevRateByBit) {
         setPriceDirectionByBit('down');
       }
     }
-    setPrevRateByBit(bybitLastPrice);
-  }, [bybitLastPrice]);
+    setPrevRateByBit(dogsBybitLastPrice);
+  }, [dogsBybitLastPrice]);
 
   const arrowByBit =
     priceDirectionByBit === 'up' ? (
@@ -125,14 +127,14 @@ const NotSlide = () => {
   const [priceDirectionOKX, setPriceDirectionOKX] = useState(null);
   useEffect(() => {
     if (prevRateOKX !== null) {
-      if (okxLastPrice > prevRateOKX) {
+      if (dogsOkxLastPrice > prevRateOKX) {
         setPriceDirectionOKX('up');
-      } else if (okxLastPrice < prevRateOKX) {
+      } else if (dogsOkxLastPrice < prevRateOKX) {
         setPriceDirectionOKX('down');
       }
     }
-    setPrevRateOKX(okxLastPrice);
-  }, [okxLastPrice]);
+    setPrevRateOKX(dogsOkxLastPrice);
+  }, [dogsOkxLastPrice]);
 
   const arrowOKX =
     priceDirectionOKX === 'up' ? (
@@ -150,9 +152,9 @@ const NotSlide = () => {
         <input
           className={styles.myAmount}
           type="text"
-          placeholder="Type your NOTcoin amount"
-          value={coinsValue ? coinsValue : ''}
-          onChange={recordCoinsValue}
+          placeholder="Type your DOGScoin amount"
+          value={dogsCoinsValue ? dogsCoinsValue : ''}
+          onChange={recordDogsCoinsValue}
         ></input>
       </div>
       <div className={styles.gridContainer}>
@@ -168,38 +170,35 @@ const NotSlide = () => {
               alt="Binance Logo"
             />
           </div>
-          {/* <div className={styles.nameExch}>Binance</div> */}
         </div>
         <div className={styles.gridItem}>
-          {binanceLastPrice}&nbsp;&nbsp;{arrowBinance}
+          {dogsBinanceLastPrice}&nbsp;&nbsp;{arrowBinance}
         </div>
-        <div className={binance24hchanger}>{binanceChange24h}&nbsp;%</div>
+        <div className={binance24hchanger}>{dogsBinanceChange24h}&nbsp;%</div>
         <div className={styles.gridItem}>{bnanceEarn}</div>
         <div className={styles.gridItemExch}>
           <div className={styles.imageBox}>
             <img className={styles.logos2} src={ByBitLogo} alt="ByBit Logo" />
           </div>
-          {/* <div className={styles.nameExch}>ByBit</div> */}
         </div>
         <div className={styles.gridItem}>
-          {bybitLastPrice}&nbsp;&nbsp;{arrowByBit}
+          {dogsBybitLastPrice}&nbsp;&nbsp;{arrowByBit}
         </div>
-        <div className={bybit24hchanger}>{bybitChange24h}&nbsp;%</div>
+        <div className={bybit24hchanger}>{dogsBybitChange24h}&nbsp;%</div>
         <div className={styles.gridItem}>{bybitEarn}</div>
         <div className={styles.gridItemExch}>
           <div className={styles.imageBox}>
             <img className={styles.logos3} src={OKXLogo} alt="OKX Logo" />
           </div>
-          {/* <div className={styles.nameExch}>OKX</div> */}
         </div>
         <div className={styles.gridItem}>
-          {okxLastPrice}&nbsp;&nbsp;{arrowOKX}
+          {dogsOkxLastPrice}&nbsp;&nbsp;{arrowOKX}
         </div>
-        <div className={okx24hchanger}>{okxChange24h}&nbsp;%</div>
+        <div className={okx24hchanger}>{dogsOkxChange24h}&nbsp;%</div>
         <div className={styles.gridItem}>{okxEarn}</div>
       </div>
     </>
   );
 };
 
-export default NotSlide;
+export default DogsSlide;

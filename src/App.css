@@ -1,21 +1,24 @@
 .app {
   display: flex;
-
   justify-content: center;
   height: 100vh; /* 100% высоты окна браузера */
-  background: linear-gradient(to bottom, #a19996 3%, #171717);
+  background: linear-gradient(30deg, #171717, #233366 80%);
 }
 
 .main {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  background-color: rgb(30, 30, 30);
+  background: linear-gradient(40deg, #233366, #171717 60%);
+
+  /* background-color: rgb(30, 30, 30); */
   border-radius: 35px;
   height: 530px;
   width: 700px;
   margin-top: 30px;
-  box-shadow: 0px 0px 60px rgb(207, 207, 204);
+  box-shadow: 0px 0px 30px rgb(11, 11, 11);
 }
 
 @media (max-width: 800px) {
@@ -26,6 +29,7 @@
 @media (max-width: 500px) {
   .main {
     width: 375px;
+    height: 490px;
   }
 }
 @media (max-width: 400px) {
