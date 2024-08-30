@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ton-widget/static/css/main.eb8ac161.css",
+    "main.css": "/ton-widget/static/css/main.18fcc24d.css",
     "main.js": "/ton-widget/static/js/main.a9c4039b.js",
     "static/js/453.190b7285.chunk.js": "/ton-widget/static/js/453.190b7285.chunk.js",
     "static/media/AvenirNextCyr-ThinItalic.eot": "/ton-widget/static/media/AvenirNextCyr-ThinItalic.e701616ad0d2198e7b01.eot",
@@ -58,12 +58,12 @@
     "static/media/dogs.webp": "/ton-widget/static/media/dogs.035d005ad890c049fd0d.webp",
     "static/media/not.webp": "/ton-widget/static/media/not.aea7fca11601d8c24d00.webp",
     "index.html": "/ton-widget/index.html",
-    "main.eb8ac161.css.map": "/ton-widget/static/css/main.eb8ac161.css.map",
+    "main.18fcc24d.css.map": "/ton-widget/static/css/main.18fcc24d.css.map",
     "main.a9c4039b.js.map": "/ton-widget/static/js/main.a9c4039b.js.map",
     "453.190b7285.chunk.js.map": "/ton-widget/static/js/453.190b7285.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb8ac161.css",
+    "static/css/main.18fcc24d.css",
     "static/js/main.a9c4039b.js"
   ]
 }
